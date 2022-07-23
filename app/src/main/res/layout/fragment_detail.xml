@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="yemekDetayToolbar" type="String" />
+        <variable name="detayYemekFragment" type="com.mehmetkurt.techcareerfinal.view.DetailFragment" />
+        <variable name="yemekNesnesi" type="com.mehmetkurt.techcareerfinal.model.Yemekler" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/background_teal"
+tools:context=".fragment.DetayFragment">
+
+<TextView
+    android:id="@+id/textViewYemekDetayIsim"
+    android:layout_width="179dp"
+    android:layout_height="36dp"
+    android:layout_marginStart="20dp"
+    android:text="@{yemekNesnesi.yemek_adi}"
+    android:layout_marginTop="20dp"
+    android:textAlignment="textStart"
+    android:textColor="@color/teal_gri"
+    android:textSize="34sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+<TextView
+    android:id="@+id/textViewYemekDetayFiyat"
+    android:layout_width="143dp"
+    android:layout_height="38dp"
+    android:layout_marginStart="85dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="20dp"
+    android:text="@{yemekNesnesi.yemek_fiyat}"
+    android:textAlignment="textEnd"
+    android:textColor="@color/teal_gri"
+    android:textSize="34sp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.903"
+    app:layout_constraintStart_toEndOf="@+id/textViewYemekDetayIsim"
+    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+<Button
+    android:id="@+id/detay_button_azalt"
+    android:layout_width="122dp"
+    android:layout_height="51dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="13dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/roundedbutton"
+    android:backgroundTint="@color/teal_gri"
+    app:icon="@drawable/ic_baseline_remove_24"
+    app:iconGravity="top"
+    app:iconTint="@color/black"
+    app:layout_constraintBottom_toTopOf="@+id/sepeteEkle"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textViewYemekDetayIsim"
+    tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <TextView
+        android:id="@+id/textViewAdet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="112dp"
+        android:textColor="@color/white"
+        android:textSize="36dp"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/detay_button_ekle"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toEndOf="@+id/detay_button_azalt"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <TextView
+    android:id="@+id/textViewGosterge"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="73dp"
+    android:textColor="@color/white"
+    android:textSize="24sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/detay_button_ekle"
+    app:layout_constraintHorizontal_bias="0.467"
+    app:layout_constraintStart_toEndOf="@+id/detay_button_azalt" />
+
+<Button
+    android:id="@+id/detay_button_ekle"
+    android:layout_width="122dp"
+    android:layout_height="51dp"
+    android:layout_marginTop="13dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/roundedbutton"
+    android:backgroundTint="@null"
+    android:textStyle="bold"
+    app:icon="@drawable/ic_baseline_add_24"
+    app:iconGravity="top"
+    app:iconTint="@color/black"
+    app:layout_constraintBottom_toTopOf="@+id/sepeteEkle"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textViewYemekDetayFiyat" />
+
+    <Button
+        android:id="@+id/sepeteEkle"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/button_teal"
+        android:text="SEPETE EKLE"
+        android:textColor="@color/teal_400"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.803" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayout"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/imageViewYemekDetayResim"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:downloadurl="@{yemekNesnesi.yemek_resim_adi}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/geriDonAnasayfa"
+        android:layout_width="38dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="2dp"
+        android:onClick="geriDonAnasayfa"
+        android:src="@drawable/ic_left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>
